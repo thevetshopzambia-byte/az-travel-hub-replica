@@ -9,38 +9,252 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as DestinationsRouteImport } from './routes/destinations'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PackagesIndexRouteImport } from './routes/packages.index'
+import { Route as CheckoutIndexRouteImport } from './routes/checkout.index'
+import { Route as PackagesIdRouteImport } from './routes/packages.$id'
+import { Route as LegalTermsRouteImport } from './routes/legal.terms'
+import { Route as LegalSystemPoliciesRouteImport } from './routes/legal.system-policies'
+import { Route as LegalRefundRouteImport } from './routes/legal.refund'
+import { Route as LegalPrivacyRouteImport } from './routes/legal.privacy'
+import { Route as LegalNoticeRouteImport } from './routes/legal.notice'
+import { Route as LegalAbuseRouteImport } from './routes/legal.abuse'
+import { Route as CheckoutSuccessRouteImport } from './routes/checkout.success'
 
+const DestinationsRoute = DestinationsRouteImport.update({
+  id: '/destinations',
+  path: '/destinations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackagesIndexRoute = PackagesIndexRouteImport.update({
+  id: '/packages/',
+  path: '/packages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutIndexRoute = CheckoutIndexRouteImport.update({
+  id: '/checkout/',
+  path: '/checkout/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackagesIdRoute = PackagesIdRouteImport.update({
+  id: '/packages/$id',
+  path: '/packages/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalTermsRoute = LegalTermsRouteImport.update({
+  id: '/legal/terms',
+  path: '/legal/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalSystemPoliciesRoute = LegalSystemPoliciesRouteImport.update({
+  id: '/legal/system-policies',
+  path: '/legal/system-policies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalRefundRoute = LegalRefundRouteImport.update({
+  id: '/legal/refund',
+  path: '/legal/refund',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalPrivacyRoute = LegalPrivacyRouteImport.update({
+  id: '/legal/privacy',
+  path: '/legal/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalNoticeRoute = LegalNoticeRouteImport.update({
+  id: '/legal/notice',
+  path: '/legal/notice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalAbuseRoute = LegalAbuseRouteImport.update({
+  id: '/legal/abuse',
+  path: '/legal/abuse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
+  id: '/checkout/success',
+  path: '/checkout/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/destinations': typeof DestinationsRoute
+  '/checkout/success': typeof CheckoutSuccessRoute
+  '/legal/abuse': typeof LegalAbuseRoute
+  '/legal/notice': typeof LegalNoticeRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/refund': typeof LegalRefundRoute
+  '/legal/system-policies': typeof LegalSystemPoliciesRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/packages/$id': typeof PackagesIdRoute
+  '/checkout/': typeof CheckoutIndexRoute
+  '/packages/': typeof PackagesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/destinations': typeof DestinationsRoute
+  '/checkout/success': typeof CheckoutSuccessRoute
+  '/legal/abuse': typeof LegalAbuseRoute
+  '/legal/notice': typeof LegalNoticeRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/refund': typeof LegalRefundRoute
+  '/legal/system-policies': typeof LegalSystemPoliciesRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/packages/$id': typeof PackagesIdRoute
+  '/checkout': typeof CheckoutIndexRoute
+  '/packages': typeof PackagesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/destinations': typeof DestinationsRoute
+  '/checkout/success': typeof CheckoutSuccessRoute
+  '/legal/abuse': typeof LegalAbuseRoute
+  '/legal/notice': typeof LegalNoticeRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/refund': typeof LegalRefundRoute
+  '/legal/system-policies': typeof LegalSystemPoliciesRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/packages/$id': typeof PackagesIdRoute
+  '/checkout/': typeof CheckoutIndexRoute
+  '/packages/': typeof PackagesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/contact'
+    | '/destinations'
+    | '/checkout/success'
+    | '/legal/abuse'
+    | '/legal/notice'
+    | '/legal/privacy'
+    | '/legal/refund'
+    | '/legal/system-policies'
+    | '/legal/terms'
+    | '/packages/$id'
+    | '/checkout/'
+    | '/packages/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/contact'
+    | '/destinations'
+    | '/checkout/success'
+    | '/legal/abuse'
+    | '/legal/notice'
+    | '/legal/privacy'
+    | '/legal/refund'
+    | '/legal/system-policies'
+    | '/legal/terms'
+    | '/packages/$id'
+    | '/checkout'
+    | '/packages'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/contact'
+    | '/destinations'
+    | '/checkout/success'
+    | '/legal/abuse'
+    | '/legal/notice'
+    | '/legal/privacy'
+    | '/legal/refund'
+    | '/legal/system-policies'
+    | '/legal/terms'
+    | '/packages/$id'
+    | '/checkout/'
+    | '/packages/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CartRoute: typeof CartRoute
+  ContactRoute: typeof ContactRoute
+  DestinationsRoute: typeof DestinationsRoute
+  CheckoutSuccessRoute: typeof CheckoutSuccessRoute
+  LegalAbuseRoute: typeof LegalAbuseRoute
+  LegalNoticeRoute: typeof LegalNoticeRoute
+  LegalPrivacyRoute: typeof LegalPrivacyRoute
+  LegalRefundRoute: typeof LegalRefundRoute
+  LegalSystemPoliciesRoute: typeof LegalSystemPoliciesRoute
+  LegalTermsRoute: typeof LegalTermsRoute
+  PackagesIdRoute: typeof PackagesIdRoute
+  CheckoutIndexRoute: typeof CheckoutIndexRoute
+  PackagesIndexRoute: typeof PackagesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/destinations': {
+      id: '/destinations'
+      path: '/destinations'
+      fullPath: '/destinations'
+      preLoaderRoute: typeof DestinationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +262,96 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/packages/': {
+      id: '/packages/'
+      path: '/packages'
+      fullPath: '/packages/'
+      preLoaderRoute: typeof PackagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/': {
+      id: '/checkout/'
+      path: '/checkout'
+      fullPath: '/checkout/'
+      preLoaderRoute: typeof CheckoutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/packages/$id': {
+      id: '/packages/$id'
+      path: '/packages/$id'
+      fullPath: '/packages/$id'
+      preLoaderRoute: typeof PackagesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/terms': {
+      id: '/legal/terms'
+      path: '/legal/terms'
+      fullPath: '/legal/terms'
+      preLoaderRoute: typeof LegalTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/system-policies': {
+      id: '/legal/system-policies'
+      path: '/legal/system-policies'
+      fullPath: '/legal/system-policies'
+      preLoaderRoute: typeof LegalSystemPoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/refund': {
+      id: '/legal/refund'
+      path: '/legal/refund'
+      fullPath: '/legal/refund'
+      preLoaderRoute: typeof LegalRefundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/privacy': {
+      id: '/legal/privacy'
+      path: '/legal/privacy'
+      fullPath: '/legal/privacy'
+      preLoaderRoute: typeof LegalPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/notice': {
+      id: '/legal/notice'
+      path: '/legal/notice'
+      fullPath: '/legal/notice'
+      preLoaderRoute: typeof LegalNoticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/abuse': {
+      id: '/legal/abuse'
+      path: '/legal/abuse'
+      fullPath: '/legal/abuse'
+      preLoaderRoute: typeof LegalAbuseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/success': {
+      id: '/checkout/success'
+      path: '/checkout/success'
+      fullPath: '/checkout/success'
+      preLoaderRoute: typeof CheckoutSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CartRoute: CartRoute,
+  ContactRoute: ContactRoute,
+  DestinationsRoute: DestinationsRoute,
+  CheckoutSuccessRoute: CheckoutSuccessRoute,
+  LegalAbuseRoute: LegalAbuseRoute,
+  LegalNoticeRoute: LegalNoticeRoute,
+  LegalPrivacyRoute: LegalPrivacyRoute,
+  LegalRefundRoute: LegalRefundRoute,
+  LegalSystemPoliciesRoute: LegalSystemPoliciesRoute,
+  LegalTermsRoute: LegalTermsRoute,
+  PackagesIdRoute: PackagesIdRoute,
+  CheckoutIndexRoute: CheckoutIndexRoute,
+  PackagesIndexRoute: PackagesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
