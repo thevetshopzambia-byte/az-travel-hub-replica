@@ -51,7 +51,7 @@ function PackageDetail() {
 
             <h2 className="mt-8 text-xl font-semibold">What's included</h2>
             <ul className="mt-3 space-y-2">
-              {pkg.highlights.map((h) => (
+              {pkg.highlights.map((h: string) => (
                 <li key={h} className="flex items-start gap-2">
                   <Check className="h-5 w-5 text-brand mt-0.5 shrink-0" />
                   <span>{h}</span>
